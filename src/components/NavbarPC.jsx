@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css';
+import './NavbarPC.css';
 
 const Navbar = () => (
   <header className="Navbar">
