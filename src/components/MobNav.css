@@ -1,70 +1,70 @@
 .MobNav {
-    display: none;
+  display: none;
 }
 
 @media only screen and (max-width: 768px) {
-    .MobNav {
-        padding: 20px 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #ff5e00;
-        position: relative;
-    }
+  .MobNav {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ff5e00;
+    position: relative;
+  }
 
-    h2 {
-        padding: 0;
-        margin: 0;
-        color: var(--clr);
-    }
+  h2 {
+    padding: 0;
+    margin: 0;
+    color: var(--clr);
+  }
 
-    button {
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
+  button {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
 
-    .wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.508);
-        backdrop-filter: blur(15px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
+  .wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.508);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .wrapper .img-links {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-    }
+  .wrapper .img-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .wrapper ul {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
-    }
+  .wrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .wrapper li {
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-    }
+  .wrapper li {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
-    .cross {
-        position: absolute;
-        top: 20px;
-        right: 10px;
-        display: block;
-    }
+  .cross {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: block;
+  }
 
 }
