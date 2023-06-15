@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   hotels: [],
@@ -31,8 +31,11 @@ const homeSlice = createSlice({
         keys.forEach((key) => {
           tempArr.push(payload[key]);
         });
-        state.hotels = [...tempArr];
-        state.status = 'loaded';
+        return {
+          ...state,
+          hotels: [...tempArr],
+          status: 'loaded',
+        };
       })
       .addCase(fetchHotels.rejected, (state, { error }) => ({
         ...state,
