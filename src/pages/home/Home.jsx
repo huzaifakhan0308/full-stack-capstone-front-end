@@ -27,8 +27,8 @@ const Home = () => {
 
   return (
   <main className='home-container'>
-    <h2 className='home-header'>LATEST MODELS</h2>
-    <p className='home-text'>Please select a vespa model</p>
+    <h2 className='home-header'>LATEST HOTELS</h2>
+    <p className='home-text'>Please select a hotel</p>
 
     <Carousel responsive={responsive} className='home-hotel-list'>
       <HotelCard />
