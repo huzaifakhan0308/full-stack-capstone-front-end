@@ -3,6 +3,7 @@ import Home from './pages/home/Home';
 import NavbarPC from './components/NavbarPC';
 import './App.css';
 import MobNav from './components/MobNav';
+import Details from './pages/details/Details';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Home />} />
+          <Route path="/:id" element={<Details />} />
           <Route path="/reservations" element={<Home />} />
           <Route path="/delete" element={<Home />} />
         </Routes>

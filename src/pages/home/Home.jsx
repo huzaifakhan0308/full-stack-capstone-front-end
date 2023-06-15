@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import { useSelector } from 'react-redux';
 import './Home.css';
 import 'react-multi-carousel/lib/styles.css';
+import { NavLink } from 'react-router-dom';
 import HotelCard from '../../components/hotelCard/HotelCard';
 
 const Home = () => {
@@ -34,15 +35,11 @@ const Home = () => {
       <p className="home-text">Please select a hotel</p>
 
       <Carousel responsive={responsive} className="home-hotel-list">
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
-        <HotelCard />
+        {hotels.map((hotel) => (
+          <NavLink key={hotel.id} to={`/${hotel.id}`} className="nav-link">
+            <HotelCard {...hotel} />
+          </NavLink>
+        ))}
       </Carousel>
 
       <footer />
@@ -51,7 +48,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// {hotels.map((hotel) => (
-//   <HotelCard key={hotel.id} {...hotel} />
-// ))}

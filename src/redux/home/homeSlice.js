@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchHotels = createAsyncThunk('home/fetchHotels', async () => {
   try {
-    const res = await fetch('');
+    const res = await fetch('https://hotels-reservations.onrender.com/users/rooms');
     const data = res.json();
     return data;
   } catch (error) {
