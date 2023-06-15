@@ -1,8 +1,9 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import HotelCard from '../../components/hotelCard/HotelCard';
+import { useSelector } from 'react-redux';
 import './Home.css';
 import 'react-multi-carousel/lib/styles.css';
+import HotelCard from '../../components/hotelCard/HotelCard';
 
 const Home = () => {
   const responsive = {
@@ -24,6 +25,8 @@ const Home = () => {
       items: 1,
     },
   };
+
+  const { hotels } = useSelector((store) => store.home);
 
   return (
     <main className="home-container">
@@ -48,3 +51,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// {hotels.map((hotel) => (
+//   <HotelCard key={hotel.id} {...hotel} />
+// ))}

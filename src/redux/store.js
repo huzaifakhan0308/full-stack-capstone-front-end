@@ -3,7 +3,7 @@ import homeSlice from './home/homeSlice';
 
 const store = configureStore({
   reducer: {
-    home: homeSlice.reducer,
+    home: homeSlice,
   },
 });
 
