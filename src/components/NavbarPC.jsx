@@ -8,6 +8,7 @@ const Navbar = () => (
       <ul>
         <li>HOME</li>
         <li>ROOMS</li>
+        <li>RESERVE A ROOM</li>
         <li>MY RESERVATION</li>
         <li>DELETE RESERVATION</li>
       </ul>
