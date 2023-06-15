@@ -1,20 +1,20 @@
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
+import './HotelCard.css'
+import Image from '../../img/skysports-logo-social-300x169.png'
 
 const HotelCard = () => {
   return (
-    <div>
-        <img src="" alt="" />
+    <div className='hotel-card'>
+        <img src={Image} alt="Hotel image" />
         <h3>Vespa C20</h3>
-        <div></div>
-        <p>
-            The Vespa C20 is a stunning moped with a modern electric
-            system and more.
+        <div className='border-line'></div>
+        <p className='hotel-description'>
+          The Vespa C20 is a stunning moped with a modern electric
+          system and more.
         </p>
         <div>
-            <FontAwesomeIcon icon="fa-brands fa-facebook" />
-            <FontAwesomeIcon icon="fa-brands fa-twitter" />
             <FontAwesomeIcon icon={faBell} />
         </div>
     </div>
