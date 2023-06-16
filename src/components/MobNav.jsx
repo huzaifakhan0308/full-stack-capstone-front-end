@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import './MobNav.css';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const MobNav = () => {
+const MobNav = (props) => {
+  const { handleLogout } = props;
+
+  const out = () => {
+    handleLogout();
+  };
+
+  const links = [
+    { title: 'HOME', path: '/' },
+    { title: 'ROOMS', path: '/rooms' },
+    { title: 'MY RESERVATION', path: '/reservations' },
+    { title: 'DELETE RESERVATION', path: '/delete' },
+    { title: 'ADD A ROOM', path: '/addRoom' },
+  ];
   const [show, setShow] = useState(false);
   return (
     <header className="MobNav">
@@ -16,10 +31,8 @@ const MobNav = () => {
               <div className="img-links">
                 <img width="100" height="100" src="https://img.icons8.com/bubbles/100/home.png" alt="logo" />
                 <ul>
-                  <li>HOME</li>
-                  <li>ROOMS</li>
-                  <li>MY RESERVATION</li>
-                  <li>DELETE RESERVATION</li>
+                  {links.map((l) => <li key={l.title}><Link to={l.path}>{l.title}</Link></li>)}
+                  <li key="logout"><button className="logout" type="button" onClick={out}>LOGOUT</button></li>
                 </ul>
               </div>
               <h6>&#169; HOUSE RENT APP. 2023</h6>
@@ -31,6 +44,10 @@ const MobNav = () => {
         )}
     </header>
   );
+};
+
+MobNav.propTypes = {
+  handleLogout: PropTypes.func.isRequired,
 };
 
 export default MobNav;
