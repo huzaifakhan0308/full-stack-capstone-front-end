@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './Home.css';
 import 'react-multi-carousel/lib/styles.css';
 import { NavLink } from 'react-router-dom';
 import HotelCard from '../../components/hotelCard/HotelCard';
+import { fetchHotels } from '../../redux/home/homeSlice';
 
 const Home = () => {
   const responsive = {
@@ -27,7 +28,15 @@ const Home = () => {
     },
   };
 
-  const { hotels } = useSelector((store) => store.home);
+  const { hotels, status } = useSelector((store) => store.home);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (status === 'loading') {
+      dispatch(fetchHotels());
+    }
+  }, [dispatch, status]);
 
   return (
     <main className="home-container">
