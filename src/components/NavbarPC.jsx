@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './NavbarPC.css';
+import logo from '../assets/BookEase Logos/BookEase Logo White Text-01.png';
 
 const Navbar = (props) => {
   const { handleLogout } = props;
@@ -21,7 +22,8 @@ const Navbar = (props) => {
   return (
     <header className="Navbar">
       <nav>
-        <img width="150" height="150" src="https://img.icons8.com/bubbles/200/home.png" alt="logo" />
+        <img width="130" height="130" src={logo} alt="logo" />
+        <hr style={{ width: '100%' }} />
         <ul>
           {links.map((l) => <li key={l.title}><Link to={l.path}>{l.title}</Link></li>)}
           <li key="logout"><button className="logout" type="button" onClick={out}>LOGOUT</button></li>

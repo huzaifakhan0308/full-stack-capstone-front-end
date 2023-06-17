@@ -3,6 +3,7 @@ import './login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/login/loginSlice';
 import { register } from '../redux/register/registerSlice';
+import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
 
 const Login = () => {
   // HOOK
@@ -52,18 +53,20 @@ const Login = () => {
         ? (
           <section className="login">
             <div className="overlay">
-              <div className="content">
-                <h1>LOGO HERE</h1>
-                <form onSubmit={handleLogin} className="login-inside">
-                  <input key="user0" onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required />
-                  <input key="pass0" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
-                  {(!loading && !data) && <input key="sub0" type="submit" value="LOGIN" />}
-                  {(loading && !data) || (!loading && data) ? <p>Loading...</p> : ''}
-                </form>
-                <p>
-                  New here? Click to
-                  <button onClick={switchDiv} type="button">Register</button>
-                </p>
+              <img width="200" style={{ marginLeft: '5vh' }} src={logo} alt="logo" />
+              <div className="content-container">
+                <div className="content">
+                  <form onSubmit={handleLogin} className="login-inside">
+                    <input key="user0" onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required />
+                    <input key="pass0" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
+                    {(!loading && !data) && <input key="sub0" type="submit" value="LOGIN" />}
+                    {(loading && !data) || (!loading && data) ? <p>Loading...</p> : ''}
+                  </form>
+                  <p>
+                    New here? Click to
+                    <button onClick={switchDiv} type="button">Register</button>
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -71,27 +74,29 @@ const Login = () => {
         : (
           <section className="login">
             <div className="overlay">
-              <div className="content">
-                <h1>LOGO HERE</h1>
-                <form onSubmit={handleRegister} className="login-inside">
-                  <input key="user1" onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required />
-                  <input key="pass1" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
-                  <input key="pass2" onChange={(e) => setVerifyPassword(e.target.value)} type="password" placeholder="Confirm Password" required />
-                  {!regLoading && !regData && <input key="sub1" type="submit" value="REGISTER" />}
-                  {regLoading && !regData ? <p>Registering Please  Wait...</p> : ''}
-                  {regData && regData.id ? (
-                    <p>
-                      Registered Successfully!
-                      <br />
-                      {' '}
-                      Now click login button below
-                    </p>
-                  ) : ''}
-                </form>
-                <p>
-                  Already Registered ? Click to
-                  <button onClick={switchDiv} type="button">Login</button>
-                </p>
+              <img width="200" style={{ marginLeft: '5vh' }} src={logo} alt="logo" />
+              <div className="content-container">
+                <div className="content">
+                  <form onSubmit={handleRegister} className="login-inside">
+                    <input key="user1" onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required />
+                    <input key="pass1" onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" required />
+                    <input key="pass2" onChange={(e) => setVerifyPassword(e.target.value)} type="password" placeholder="Confirm Password" required />
+                    {!regLoading && !regData && <input key="sub1" type="submit" value="REGISTER" />}
+                    {regLoading && !regData ? <p>Registering Please  Wait...</p> : ''}
+                    {regData && regData.id ? (
+                      <p>
+                        Registered Successfully!
+                        <br />
+                        {' '}
+                        Now click login button below
+                      </p>
+                    ) : ''}
+                  </form>
+                  <p>
+                    Already Registered ? Click to
+                    <button onClick={switchDiv} type="button">Login</button>
+                  </p>
+                </div>
               </div>
             </div>
           </section>
