@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import '../styles/addRoom.css';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { CreateRoom } from '../redux/room/roomsSlice';
 
 const AddRoom = () => {
   const loginUserData = JSON.parse(localStorage.getItem('user_data'));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ const AddRoom = () => {
       room,
       password: loginUserData.password,
     }));
+    navigate('/');
   };
 
   return (
@@ -43,8 +46,8 @@ const AddRoom = () => {
           <input type="number" name="beds" placeholder="Number of Beds" />
           <input type="text" name="address" placeholder="Room Address" />
           select image for creating room
-          <input type="file" name="image" accept="image/*" />
-          <button type="submit" className="a">Add Room</button>
+          <input type="file" name="image" onChange={handleImageUpload} />
+          <button type="submit">Add Room</button>
         </form>
       </div>
     </section>
