@@ -15,7 +15,6 @@ const Navbar = (props) => {
     { title: 'HOME', path: '/' },
     { title: 'ROOMS', path: '/rooms' },
     { title: 'MY RESERVATION', path: '/reservations' },
-    { title: 'DELETE RESERVATION', path: '/delete' },
     { title: 'ADD A ROOM', path: '/addRoom' },
   ];
 

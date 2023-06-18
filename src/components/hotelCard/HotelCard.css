@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hotel-card {
+  width: 350px;
+  height: 355px;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.hotel-card > img {
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.border-line {
+  border-top: 5px dotted #d3d3d3;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.hotel-description {
+  text-align: center;
+  margin-top: 15px;
+  padding: 0 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Adjust the number of lines you want */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
