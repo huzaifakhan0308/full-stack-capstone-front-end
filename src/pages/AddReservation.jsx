@@ -1,12 +1,13 @@
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { CreateReservation } from '../redux/reservation/reservationSlice';
 
 const AddReservation = () => {
   const { id } = useParams();
   const loginUserData = JSON.parse(localStorage.getItem('user_data'));
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +25,7 @@ const AddReservation = () => {
       reservation,
       password: loginUserData.password,
     }));
+    navigate('/reservations');
   };
 
   return (
@@ -36,7 +38,7 @@ const AddReservation = () => {
           <input type="date" name="from_date" placeholder="From" />
           To:
           <input type="date" name="to_date" placeholder="To" />
-          <button type="submit" className="a">Reserved room</button>
+          <button type="submit">Reserved room</button>
         </form>
       </div>
     </section>
