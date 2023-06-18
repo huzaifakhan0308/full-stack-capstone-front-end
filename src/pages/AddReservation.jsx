@@ -31,7 +31,10 @@ const AddReservation = () => {
       <div className="overlay1">
         <form onSubmit={handleSubmit}>
           <h1>Create Reservation</h1>
+          <br />
+          From:
           <input type="date" name="from_date" placeholder="From" />
+          To:
           <input type="date" name="to_date" placeholder="To" />
           <button type="submit" className="a">Reserved room</button>
         </form>

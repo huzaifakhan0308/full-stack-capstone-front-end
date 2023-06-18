@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const CreateReservation = createAsyncThunk('create/reservation', async (obj) => {
-  console.log(obj);
   const response = await fetch(`https://hotels-reservations.onrender.com/users/${obj.reservation.users_id}/reservations`, {
     method: 'POST',
     headers: {
@@ -10,7 +9,6 @@ export const CreateReservation = createAsyncThunk('create/reservation', async (o
     body: JSON.stringify(obj),
   });
   const data = await response.json();
-  console.log(data);
   return data;
 });
 
