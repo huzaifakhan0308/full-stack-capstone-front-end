@@ -28,15 +28,15 @@ const Home = () => {
     },
   };
 
-  const { hotels, status } = useSelector((store) => store.home);
+  const loginUserData = JSON.parse(localStorage.getItem('user_data'));
+
+  const { hotels } = useSelector((store) => store.home);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (status === 'loading') {
-      dispatch(fetchHotels());
-    }
-  }, [dispatch, status]);
+    dispatch(fetchHotels(loginUserData.user_id));
+  }, [dispatch]);
 
   return (
     <main className="home-container">
@@ -45,13 +45,11 @@ const Home = () => {
 
       <Carousel responsive={responsive} className="home-hotel-list">
         {hotels.map((hotel) => (
-          <NavLink key={hotel.id} to={`/${hotel.id}`} className="nav-link">
+          <NavLink key={hotel.id} className="nav-link">
             <HotelCard {...hotel} />
           </NavLink>
         ))}
       </Carousel>
-
-      <footer />
     </main>
   );
 };

@@ -6,10 +6,11 @@ const initialState = {
   error: null,
 };
 
-export const fetchHotels = createAsyncThunk('home/fetchHotels', async () => {
+export const fetchHotels = createAsyncThunk('home/fetchHotels', async (user_id) => {
   try {
-    const res = await fetch('https://hotels-reservations.onrender.com/rooms');
+    const res = await fetch(`https://hotels-reservations.onrender.com/users/${user_id}/rooms`);
     const data = res.json();
+    console.log(data);
     return data;
   } catch (error) {
     return error.message;
