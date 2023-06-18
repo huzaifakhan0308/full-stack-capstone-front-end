@@ -10,6 +10,7 @@ export const CreateRoom = createAsyncThunk('create/room', async (obj) => {
     body: JSON.stringify(obj),
   });
   const data = await response.json();
+  console.log(data);
   return data;
 });
 
