@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { fetchDetails, resetState } from '../../redux/details/detailsSlice';
 import Loading from '../loading/Loading';
 import './Details.css';
@@ -61,12 +62,13 @@ const Details = () => {
               </div>
             </div>
           </div>
-
-          <div className="details-reserve-btn">
-            <FontAwesomeIcon icon={faGear} />
-            <p>reserve</p>
-            <FontAwesomeIcon icon={faCircleChevronRight} />
-          </div>
+          <NavLink to={`/AddReservation/${id}`}>
+            <div className="details-reserve-btn">
+              <FontAwesomeIcon icon={faGear} />
+              <p>reserve</p>
+              <FontAwesomeIcon icon={faCircleChevronRight} />
+            </div>
+          </NavLink>
         </div>
       </div>
     </div>
