@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/home/Home';
 import RoomList from './pages/RoomList';
 import Reservations from './pages/Reservations';
-import DeleteReservation from './pages/DeleteReservation';
+import AddReservation from './pages/AddReservation';
 import NavbarPC from './components/NavbarPC';
 import './App.css';
 import MobNav from './components/MobNav';
@@ -60,9 +60,9 @@ function App() {
             }
           />
           <Route
-            path="/delete"
+            path="/AddReservation/:id"
             element={
-              isLoggedIn ? <DeleteReservation /> : <Navigate to="/login" replace />
+              isLoggedIn ? <AddReservation /> : <Navigate to="/login" replace />
             }
           />
           <Route

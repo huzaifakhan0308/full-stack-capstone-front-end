@@ -1,13 +1,13 @@
 import React from 'react';
 
-const DeleteReservation = () => {
+const ShowReservation = () => {
   const d = 'a';
   return (
     <div>
-      DeleteReservation
+      ShowReservation
       {d}
     </div>
   );
 };
 
-export default DeleteReservation;
+export default ShowReservation;
