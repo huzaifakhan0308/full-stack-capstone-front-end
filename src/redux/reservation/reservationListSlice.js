@@ -12,7 +12,7 @@ export const GetReservation = createAsyncThunk('create/reservation', async (obj)
     const data = res.json();
     console.log(data);
     const res2 = await fetch(`https://hotels-reservations.onrender.com/users/${obj.user_id}/rooms`);
-    const data2 = res.json();
+    const data2 = res2.json();
     console.log(data2);
     return data;
   } catch (error) {
