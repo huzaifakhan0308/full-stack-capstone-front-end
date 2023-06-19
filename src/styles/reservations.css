@@ -14,6 +14,7 @@
   border: 1px solid gray;
   box-shadow: inset 0 0 1em #01013b, 0 0 2em gray;
   color: #01013b;
+  margin-bottom: 7px;
 }
 
 .btn {
