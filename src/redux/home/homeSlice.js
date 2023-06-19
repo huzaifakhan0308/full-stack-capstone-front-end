@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   hotels: [],
+  details: {},
   status: 'idle',
   error: null,
 };

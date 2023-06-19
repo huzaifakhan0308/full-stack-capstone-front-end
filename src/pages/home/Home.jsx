@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import { useDispatch, useSelector } from 'react-redux';
 import './Home.css';
 import 'react-multi-carousel/lib/styles.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import HotelCard from '../../components/hotelCard/HotelCard';
 import { fetchHotels } from '../../redux/home/homeSlice';
 
@@ -33,10 +33,11 @@ const Home = () => {
   const { hotels } = useSelector((store) => store.home);
 
   const dispatch = useDispatch();
+  const location = useLocation();
 
   useEffect(() => {
     dispatch(fetchHotels(loginUserData.user_id));
-  }, [dispatch]);
+  }, [location, dispatch]);
 
   return (
     <main className="home-container">
@@ -45,7 +46,7 @@ const Home = () => {
 
       <Carousel responsive={responsive} className="home-hotel-list">
         {hotels.map((hotel) => (
-          <NavLink key={hotel.id} className="nav-link">
+          <NavLink key={hotel.id} to={`/details/${hotel.id}`} className="nav-link">
             <HotelCard {...hotel} />
           </NavLink>
         ))}
