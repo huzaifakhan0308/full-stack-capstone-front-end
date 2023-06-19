@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-export const fetchDetails = createAsyncThunk('details/fetchDetails', async (user_id, room_id) => {
+export const fetchDetails = createAsyncThunk('details/fetchDetails', async ({ user_id, room_id }) => {
   try {
     const res = await fetch(`https://hotels-reservations.onrender.com/users/${user_id}/rooms/${room_id}`);
     const data = res.json();
@@ -19,6 +19,13 @@ export const fetchDetails = createAsyncThunk('details/fetchDetails', async (user
 const detailsSlice = createSlice({
   name: 'details',
   initialState,
+  reducers: {
+    resetState: (state) => ({
+      ...state,
+      room: {},
+      status: 'idle',
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchDetails.pending, (state) => ({
@@ -38,4 +45,5 @@ const detailsSlice = createSlice({
   },
 });
 
+export const { resetState } = detailsSlice.actions;
 export default detailsSlice.reducer;
