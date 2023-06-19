@@ -4,11 +4,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router';
 import { fetchDetails, resetState } from '../../redux/details/detailsSlice';
+import Loading from '../loading/Loading';
 
 const Details = () => {
   const { id } = useParams();
   const location = useLocation();
-  const { room } = useSelector((store) => store.details);
+  const { room, status } = useSelector((store) => store.details);
   const dispatch = useDispatch();
   const loginUserData = JSON.parse(localStorage.getItem('user_data'));
   const user = loginUserData?.user_id;
@@ -21,6 +22,9 @@ const Details = () => {
     };
   }, [location, dispatch, user, id]);
 
+  if (status === 'loading') {
+    return <Loading />;
+  }
   return (
     <div>
       <img src="" alt="" />
