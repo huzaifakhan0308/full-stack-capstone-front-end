@@ -92,7 +92,7 @@ Clone this repository to your desired folder:
 
 In the project directory, you can run following commands:</br>
 
-- `cd bookracers-frontend`</br>
+- `cd full-stack-capstone-front-end`</br>
 - `npm install`</br>
 - `npm start`</br>
 - Open a browser and go to: `https://localhost:3000` to view the frontend app.
