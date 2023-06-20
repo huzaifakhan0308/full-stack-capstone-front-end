@@ -48,7 +48,6 @@
   overflow-y: scroll;
   align-items: center;
   scrollbar-width: thin;
-  scrollbar-color: #d32b6c;
 }
 
 .home-hotel-list::-webkit-scrollbar {
