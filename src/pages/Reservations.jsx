@@ -34,13 +34,6 @@ const Reservations = () => {
 
     if (response.ok) {
       navigate('/');
-      return (
-        <h2>reservation cancelled</h2>
-      );
-    } else {
-      return (
-        <h2>Failed to cancel reservation</h2>
-      );
     }
   };
 
