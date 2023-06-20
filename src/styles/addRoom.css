@@ -7,6 +7,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 92vh;
 }
 
 .addRoom-container .overlay1 {
@@ -24,8 +25,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 85%;
-  width: 55%;
+  height: 80%;
+  width: 80%;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.887);
 }
@@ -45,7 +46,7 @@
   /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
   background-color: rgb(2, 2, 69);
   margin-top: 5vh;
-  width: 30vh;
+  width: 20vh;
   height: 5vh;
   border-radius: 5px;
   font-size: 15px;
@@ -53,4 +54,19 @@
 
 .addRoom-container form button:hover {
   background-color: rgba(2, 2, 69, 0.8);
+}
+
+@media screen and (min-width: 770px) {
+  .addRoom-container {
+    height: 100%;
+  }
+
+  .addRoom-container form {
+    height: 85%;
+    width: 55%;
+  }
+
+  .addRoom-container form button {
+    width: 30vh;
+  }
 }
