@@ -1,5 +1,5 @@
 import {
-  faBed, faCircleChevronRight, faGear, faTelevision, faWifi,
+  faBed, faCircleCheck, faCircleChevronRight, faGear, faTelevision, faWifi,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
@@ -62,13 +62,23 @@ const Details = () => {
               </div>
             </div>
           </div>
-          <NavLink to={`/AddReservation/${id}`}>
-            <div className="details-reserve-btn">
-              <FontAwesomeIcon icon={faGear} />
-              <p>reserve</p>
-              <FontAwesomeIcon icon={faCircleChevronRight} />
-            </div>
-          </NavLink>
+          {
+  room.reservations_id === null ? (
+    <NavLink to={`/AddReservation/${id}`}>
+      <div className="details-reserve-btn">
+        <FontAwesomeIcon icon={faGear} />
+        <p>reserve</p>
+        <FontAwesomeIcon icon={faCircleChevronRight} />
+      </div>
+    </NavLink>
+  ) : (
+    <div className="details-reserve-btn">
+      <FontAwesomeIcon icon={faGear} />
+      <p>reserved</p>
+      <FontAwesomeIcon icon={faCircleCheck} />
+    </div>
+  )
+}
         </div>
       </div>
     </div>

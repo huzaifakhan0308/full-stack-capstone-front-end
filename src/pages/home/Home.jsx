@@ -6,6 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { NavLink, useLocation } from 'react-router-dom';
 import HotelCard from '../../components/hotelCard/HotelCard';
 import { fetchHotels } from '../../redux/home/homeSlice';
+import Loading from '../loading/Loading';
 
 const Home = () => {
   const responsive = {
@@ -30,7 +31,7 @@ const Home = () => {
 
   const loginUserData = JSON.parse(localStorage.getItem('user_data'));
 
-  const { hotels } = useSelector((store) => store.home);
+  const { hotels, status } = useSelector((store) => store.home);
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -39,6 +40,9 @@ const Home = () => {
     dispatch(fetchHotels(loginUserData.user_id));
   }, [location, dispatch]);
 
+  if (status === 'loading') {
+    return <Loading />;
+  }
   return (
     <main className="home-container">
       <h2 className="home-header">LATEST HOTELS</h2>
