@@ -8,13 +8,14 @@ const RoomList = () => {
 
   useEffect(() => {
     dispatch(fetchHotels(loginUserData.user_id));
-  }, []);
+  }, [dispatch]);
 
   const { hotels } = useSelector((store) => store.home);
   return (
     <div>
       {
-        hotels.filter((hotel) => hotel.users_id === loginUserData.user_id).map((hotel) => <h2>{hotel.room_name}</h2>)
+        hotels.filter((hotel) => hotel.users_id === loginUserData.user_id)
+          .map((hotel) => <h2 key={hotel.room_name}>{hotel.room_name}</h2>)
       }
     </div>
   );

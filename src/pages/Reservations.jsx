@@ -19,10 +19,9 @@ const Reservations = () => {
 
     }));
     dispatch(fetchHotels(loginUserData.user_id));
-  }, []);
+  }, [dispatch]);
 
   const { hotels } = useSelector((store) => store.home);
-  console.log(hotels);
 
   const cancelReservation = async (id) => {
     const response = await fetch(`https://hotels-reservations.onrender.com/users/${loginUserData.user_id}/reservations/${id}`, {
@@ -34,10 +33,11 @@ const Reservations = () => {
     });
 
     if (response.ok) {
-      console.log('Reservation successfully canceled');
       navigate('/');
     } else {
-      console.error('Failed to cancel reservation');
+      return (
+        <h2>Failed to cancel reservation</h2>
+      );
     }
   };
 
