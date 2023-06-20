@@ -25,7 +25,7 @@ const AddReservation = () => {
       reservation,
       password: loginUserData.password,
     }));
-    navigate('/reservations');
+    navigate('/');
   };
 
   return (
