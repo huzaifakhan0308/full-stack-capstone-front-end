@@ -36,7 +36,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchHotels(loginUserData.user_id));
-  }, [dispatch]);
+  }, [dispatch, loginUserData.user_id]);
 
   return (
     <main className="home-container">
