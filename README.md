@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#Tech_Stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
+
+<!-- PROJECT DESCRIPTION -->
+
+# 📖 [Hotels-reservations] <a name="about-project"></a>
+
+**[Hotels-reservations]**  is a FullStack Group project and here is the frontend service provider for the hotels-reservations App which helps the frontend users to register(sign up) and login (sign in). It also provides API endpoints to read, write, update, and delete data.
+
+- We also built a simple documentation for this project so users can have an idea on how to use the app.
+
+## 🛠 Built With <a name="built-with"></a>
+## Tech Stack
+- [x] [ReactJs](https://reactjs.org/)
+- [x] [Ruby on Rails](https://rubyonrails.org/)
+- [x] [PostgresSQL](https://www.postgresql.org/)
+- [x] And some other open source [ruby gems](https://rubygems.org/)
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+- **[Create new user]**
+- **[Add new room]**
+- **[Delete room]**
+- **[Add reservation]**
+- **[Cancel reservation]**
+- **[Display my reservations list]**
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+
+***[Link to FrontEnd Repo](https://github.com/huzaifakhan0308/full-stack-capstone-front-end)***
+***[Link to Live Demo]()***
+
+***[Link to BackEnd Repo](https://github.com/huzaifakhan0308/full-stack-capstone-back-end)***
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Kanban Board 📄
+
+- [Kanban Board Link](https://github.com/users/huzaifakhan0308/projects/3/views/1)
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To get a local copy up and running, follow these steps.
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+In order to run this project :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Make sure you have `Git installed` in your Computer or Install it by following [these steps](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Setup
 
-### `npm test`
+Clone this repository to your desired folder:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Download the zip file or 
+2. clone with this command `git clone https://github.com/huzaifakhan0308/full-stack-capstone-front-end.git`
+3. cd full-stack-capstone-front-end
 
-### `npm run build`
+### Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In the project directory, you can run following commands:</br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `cd bookracers-frontend`</br>
+- `npm install`</br>
+- `npm start`</br>
+- Open a browser and go to: `https://localhost:3000` to view the frontend app.
+- The page will reload when you make changes.\
+- You may also see any linter errors in the console.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run tests
 
-### `npm run eject`
+For tracking linter errors locally you need to follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- For tracking the linter errors in CSS file run:
+  > npx stylelint "**/*.{css,scss}"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - And For tracking the linter errors in JavaScript file run:
+  > npx eslint .
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- AUTHORS -->
 
-## Learn More
+## 👥 Authors <a name="authors"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Aubin SIMPEZE**
 
-### Code Splitting
+- GitHub: [@githubhandle](https://github.com/aubinleyoung)
+- Twitter: [@twitterhandle](https://twitter.com/Aubin_Simpeze)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aubin-simpeze/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<!-- FUTURE FEATURES -->
 
-### Making a Progressive Web App
+## 🔭 Future Features <a name="future-features"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+- [ ] **[More animations]**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- CONTRIBUTING -->
 
-### `npm run build` fails to minify
+## 🤝 Contributing <a name="contributing"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/huzaifakhan0308/full-stack-capstone-front-end/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+- Hat tip to [Microvers](https://www.microverse.org/)  and all the staff
+- Code Reviewers
+- Coding Partners
+
+The design has been inspired by: [Murat Korkmaz on Behance](https://www.behance.net/muratk)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
