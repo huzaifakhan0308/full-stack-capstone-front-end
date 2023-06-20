@@ -38,7 +38,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchHotels(loginUserData.user_id));
-  }, [location, dispatch]);
+  }, [location, dispatch, loginUserData.user_id]);
 
   if (status === 'loading') {
     return <Loading />;
