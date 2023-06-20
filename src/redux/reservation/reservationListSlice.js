@@ -10,13 +10,8 @@ export const GetReservation = createAsyncThunk('create/reservation', async (obj)
   try {
     const res = await fetch(`https://hotels-reservations.onrender.com/users/${obj.user_id}/reservations`);
     const data = res.json();
-    console.log(data);
-    const res2 = await fetch(`https://hotels-reservations.onrender.com/users/${obj.user_id}/rooms`);
-    const data2 = res.json();
-    console.log(data2);
     return data;
   } catch (error) {
-    console.log(error);
     return error.message;
   }
 });
