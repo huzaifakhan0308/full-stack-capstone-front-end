@@ -78,6 +78,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .details-reserve-btn {
@@ -92,6 +93,10 @@
   border-radius: 5px;
   cursor: pointer;
   width: fit-content;
+}
+
+.reserved {
+  background-color: #8ab800;
 }
 
 @media screen and (min-width: 768px) {
