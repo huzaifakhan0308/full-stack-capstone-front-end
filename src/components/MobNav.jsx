@@ -12,9 +12,8 @@ const MobNav = (props) => {
 
   const links = [
     { title: 'HOME', path: '/' },
-    { title: 'ROOMS', path: '/rooms' },
+    { title: 'MY ROOMS', path: '/rooms' },
     { title: 'MY RESERVATION', path: '/reservations' },
-    { title: 'DELETE RESERVATION', path: '/delete' },
     { title: 'ADD A ROOM', path: '/addRoom' },
   ];
   const [show, setShow] = useState(false);
