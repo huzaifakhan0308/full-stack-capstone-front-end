@@ -4,26 +4,27 @@
 }
 
 .hotel-card {
-  width: 40rem;
-  height: 250px;
+  width: 19rem;
+  height: 300px;
   background-color: #fff;
   border: 1px solid #d32b6c;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
-  padding: 0 1rem;
   padding-bottom: 10px;
   cursor: pointer;
   margin-bottom: 25px;
+  position: relative;
 }
 
 .img-div > img {
   inline-size: 100%;
   object-fit: cover;
-  height: 180px;
-  width: 200px;
+  width: 19rem;
+  height: 150px;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -60,6 +61,7 @@
   -webkit-line-clamp: 2; /* Adjust the number of lines you want */
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 
 .card-icons {
@@ -68,10 +70,13 @@
 }
 
 .card-buttons {
-  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  gap: 10px;
 }
 
 .card-details-btn {
@@ -79,7 +84,7 @@
   display: flex;
   gap: 15px;
   align-items: center;
-  background-color: rgb(1, 1, 59);
+  background-color: rgb(1, 1, 59, 0.5);
   padding: 5px 10px;
   font-size: 18px;
   border-radius: 5px;
@@ -88,7 +93,7 @@
 
 .card-reserve-btn {
   display: flex;
-  background-color: #d32b6c;
+  background-color: rgb(211, 43, 108, 0.6);
   color: #fff;
   align-items: center;
   justify-content: center;
@@ -98,4 +103,71 @@
 
 .bg-green {
   background-color: #8ab800;
+}
+
+@media screen and (min-width: 768px) {
+  .hotel-card {
+    width: 40rem;
+    height: 250px;
+    flex-direction: row;
+    padding: 0 1rem;
+  }
+  
+  .img-div > img {
+    height: 180px;
+    width: 200px;
+  }
+  
+  .description-div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    height: 180px;
+    margin-left: 1rem;
+    position: relative;
+    padding-right: 10px;
+  }
+  
+  .card-header {
+    font-size: 25px;
+    color: rgb(1, 1, 59);
+  }
+  
+  .border-line {
+    border-top: 5px dotted rgb(1, 1, 59, 0.7);
+    width: 100px;
+    margin-top: 10px;
+  }
+  
+  .hotel-description {
+    text-align: center;
+    margin-top: 25px;
+    padding: 0 5px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Adjust the number of lines you want */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .card-icons {
+    position: absolute;
+    bottom: 1rem;
+  }
+  
+  .card-buttons {
+    height: 180px;
+    position: relative;
+    gap: 0;
+  }
+  
+  .card-details-btn {
+    background-color: rgb(1, 1, 59);
+  }
+  
+  .card-reserve-btn {
+    background-color: #d32b6c;
+  }
 }
