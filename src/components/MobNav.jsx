@@ -31,7 +31,7 @@ const MobNav = () => {
               <div className="img-links">
                 <img width="100" height="100" src={logo} alt="logo" />
                 <ul>
-                  {links.map((l) => <li key={l.title}><Link to={l.path}>{l.title}</Link></li>)}
+                  {links.map((l) => <li onClick={() => setShow(!show)} key={l.title}><Link to={l.path}>{l.title}</Link></li>)}
                   <li key="logout"><button className="logout" type="button" onClick={out}>LOGOUT</button></li>
                 </ul>
               </div>
