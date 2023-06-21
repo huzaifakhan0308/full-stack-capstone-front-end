@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   hotels: [],
+  details: {},
   status: 'idle',
   error: null,
 };
@@ -23,7 +24,7 @@ const homeSlice = createSlice({
     builder
       .addCase(fetchHotels.pending, (state) => ({
         ...state,
-        status: 'pending',
+        status: 'loading',
       }))
       .addCase(fetchHotels.fulfilled, (state, { payload }) => {
         const keys = Object.keys(payload);

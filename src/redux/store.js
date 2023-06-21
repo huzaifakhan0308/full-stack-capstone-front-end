@@ -4,6 +4,7 @@ import loginSlice from './login/loginSlice';
 import registerSlice from './register/registerSlice';
 import roomSlice from './room/roomsSlice';
 import reservationSlice from './reservation/reservationSlice';
+import detailsSlice from './details/detailsSlice';
 import reservationListSlice from './reservation/reservationListSlice';
 
 const store = configureStore({
@@ -13,6 +14,7 @@ const store = configureStore({
     register: registerSlice,
     room: roomSlice,
     reservation: reservationSlice,
+    details: detailsSlice,
     reservationList: reservationListSlice,
   },
 });

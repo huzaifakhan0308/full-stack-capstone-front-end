@@ -71,6 +71,12 @@ function App() {
               isLoggedIn ? <AddRoom /> : <Navigate to="/login" replace />
             }
           />
+          <Route
+            path="/details/:id"
+            element={
+              isLoggedIn ? <Details /> : <Navigate to="/login" replace />
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>

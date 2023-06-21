@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loading-container {
+  background-color: #042356;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
