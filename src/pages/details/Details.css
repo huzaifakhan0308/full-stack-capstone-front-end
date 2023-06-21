@@ -4,7 +4,7 @@
 }
 
 .container-background {
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
   object-fit: contain;
@@ -12,34 +12,34 @@
 
 .details-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 100vh;
+  height: 90vh;
   background-color: rgb(1, 1, 59, 0.7);
-  padding: 0 2rem;
 }
 
 .details-image {
-  width: 55%;
+  width: 100%;
   border: 1px solid #d3d3d3;
-  border-radius: 10px;
   overflow: hidden;
 }
 
 .details-text-container {
   color: #fff;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 55%;
+  height: 50%;
   align-items: end;
   position: relative;
 }
 
 .upper-text-container {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  width: 100%;
+  align-items: center;
 }
 
 .upper-text-container > p {
@@ -49,10 +49,12 @@
 .room-detail-header {
   font-size: 32px;
   letter-spacing: 3px;
+  color: #d32b6c;
 }
 
 .detail-status-container {
   width: 100%;
+  height: auto;
   position: absolute;
   top: 5rem;
   left: 0;
@@ -72,9 +74,15 @@
   font-size: 20px;
 }
 
+.positioning {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .details-reserve-btn {
   color: #fff;
-  margin-top: 20rem;
+  margin-top: 12rem;
   display: flex;
   gap: 15px;
   align-items: center;
@@ -83,5 +91,45 @@
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
-  align-self: start;
+  width: fit-content;
+}
+
+@media screen and (min-width: 768px) {
+  .container-background {
+    height: 100vh;
+  }
+
+  .details-container {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 2rem;
+  }
+
+  .details-image {
+    width: 55%;
+    border-radius: 10px;
+  }
+
+  .details-text-container {
+    width: 40%;
+    height: 55%;
+  }
+
+  .upper-text-container {
+    margin-top: 0;
+    align-items: end;
+  }
+
+  .room-detail-header {
+    color: #fff;
+  }
+
+  .positioning {
+    justify-content: flex-end;
+  }
+
+  .details-reserve-btn {
+    margin-top: 20rem;
+  }
 }

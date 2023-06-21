@@ -64,13 +64,15 @@ const Details = () => {
           </div>
           {
   room.reservations_id === null ? (
-    <NavLink to={`/AddReservation/${id}`}>
-      <div className="details-reserve-btn">
-        <FontAwesomeIcon icon={faGear} />
-        <p>reserve</p>
-        <FontAwesomeIcon icon={faCircleChevronRight} />
-      </div>
-    </NavLink>
+    <div className="positioning">
+      <NavLink to={`/AddReservation/${id}`}>
+        <div className="details-reserve-btn">
+          <FontAwesomeIcon icon={faGear} />
+          <p>reserve</p>
+          <FontAwesomeIcon icon={faCircleChevronRight} />
+        </div>
+      </NavLink>
+    </div>
   ) : (
     <div className="details-reserve-btn">
       <FontAwesomeIcon icon={faGear} />

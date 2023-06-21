@@ -39,7 +39,6 @@
   margin-left: 1rem;
   position: relative;
   padding-right: 10px;
-  border: ;
 }
 
 .card-header {
@@ -59,15 +58,10 @@
   padding: 0 5px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* Adjust the number of lines you want */
+  -webkit-line-clamp: 2;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 15px;
-}
-
-.card-icons {
-  position: absolute;
-  bottom: 1rem;
 }
 
 .card-buttons {
@@ -113,35 +107,23 @@
     flex-direction: row;
     padding: 0 1rem;
   }
-  
+
   .img-div > img {
     height: 180px;
     width: 200px;
   }
-  
-  .description-div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    height: 180px;
-    margin-left: 1rem;
-    position: relative;
-    padding-right: 10px;
-  }
-  
+
   .card-header {
     font-size: 25px;
     color: rgb(1, 1, 59);
   }
-  
+
   .border-line {
     border-top: 5px dotted rgb(1, 1, 59, 0.7);
     width: 100px;
     margin-top: 10px;
   }
-  
+
   .hotel-description {
     text-align: center;
     margin-top: 25px;
@@ -152,22 +134,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  
+
   .card-icons {
     position: absolute;
     bottom: 1rem;
   }
-  
+
   .card-buttons {
     height: 180px;
     position: relative;
     gap: 0;
   }
-  
+
   .card-details-btn {
     background-color: rgb(1, 1, 59);
   }
-  
+
   .card-reserve-btn {
     background-color: #d32b6c;
   }
