@@ -94,6 +94,10 @@
   width: fit-content;
 }
 
+.reserved {
+  background-color: #8ab800;
+}
+
 @media screen and (min-width: 768px) {
   .container-background {
     height: 100vh;

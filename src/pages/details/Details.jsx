@@ -74,10 +74,12 @@ const Details = () => {
       </NavLink>
     </div>
   ) : (
-    <div className="details-reserve-btn">
-      <FontAwesomeIcon icon={faGear} />
-      <p>reserved</p>
-      <FontAwesomeIcon icon={faCircleCheck} />
+    <div className="positioning">
+      <div className="details-reserve-btn reserved">
+        <FontAwesomeIcon icon={faGear} />
+        <p>reserved</p>
+        <FontAwesomeIcon icon={faCircleCheck} />
+      </div>
     </div>
   )
 }
