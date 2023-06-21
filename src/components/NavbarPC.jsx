@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import './NavbarPC.css';
 import logo from '../assets/BookEase Logos/BookEase Logo White Text-01.png';
 
-const Navbar = (props) => {
-  const { handleLogout } = props;
-
+const Navbar = () => {
   const out = () => {
-    handleLogout();
+    localStorage.removeItem('logged_user');
+    localStorage.removeItem('user_data');
+    window.location.reload();
   };
 
   const links = [
@@ -31,10 +30,6 @@ const Navbar = (props) => {
       <h6>&#169; HOUSE RENT APP. 2023</h6>
     </header>
   );
-};
-
-Navbar.propTypes = {
-  handleLogout: PropTypes.func.isRequired,
 };
 
 export default Navbar;
