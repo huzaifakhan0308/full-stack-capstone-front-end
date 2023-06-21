@@ -8,8 +8,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ff5e00;
     position: relative;
+    z-index: 100;
+    color: white;
   }
 
   h2 {
@@ -30,8 +31,9 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.508);
-    backdrop-filter: blur(15px);
+    padding: 10px 0;
+    box-sizing: border-box;
+    background-color: rgb(1, 1, 59);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

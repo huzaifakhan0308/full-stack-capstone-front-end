@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import Home from './pages/home/Home';
 import RoomList from './pages/RoomList';
 import Reservations from './pages/Reservations';
@@ -14,20 +14,13 @@ import Details from './pages/details/Details';
 
 function App() {
   const isLoggedIn = localStorage.getItem('logged_user') ? true : false;
-
-  const handleLogout = () => {
-    localStorage.removeItem('logged_user');
-    localStorage.removeItem('user_data');
-    window.location.href = '/login';
-  }
-
   return (
     <div className="App">
       <BrowserRouter>
         {isLoggedIn && (
           <>
-            <MobNav handleLogout={handleLogout} />
-            <NavbarPC handleLogout={handleLogout} />
+            <MobNav />
+            <NavbarPC />
           </>
         )}
         <Routes>

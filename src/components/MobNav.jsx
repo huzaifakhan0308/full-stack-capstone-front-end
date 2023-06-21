@@ -1,53 +1,53 @@
 import React, { useState } from 'react';
 import './MobNav.css';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import logo from '../assets/BookEase Logos/BookEase Logo White Text-01.png';
+import logo2 from '../assets/BookEase Logos/BookEase Logo-01.png';
 
-const MobNav = (props) => {
-  const { handleLogout } = props;
-
+const MobNav = () => {
   const out = () => {
-    handleLogout();
+    localStorage.removeItem('logged_user');
+    localStorage.removeItem('user_data');
+    window.location.reload();
   };
 
   const links = [
     { title: 'HOME', path: '/' },
-    { title: 'ROOMS', path: '/rooms' },
+    { title: 'MY ROOMS', path: '/rooms' },
     { title: 'MY RESERVATION', path: '/reservations' },
-    { title: 'DELETE RESERVATION', path: '/delete' },
     { title: 'ADD A ROOM', path: '/addRoom' },
   ];
   const [show, setShow] = useState(false);
   return (
     <header className="MobNav">
-      <h2>HOUSE RENT APP</h2>
+      <img width="48" height="48" src={logo2} alt="logo2" />
       <button type="button" onClick={() => setShow(!show)}>
-        <img width="48" height="48" src="https://img.icons8.com/glyph-neue/64/ff5e00/xbox-menu.png" alt="xbox-menu" />
+        <img width="48" height="48" src="https://img.icons8.com/glyph-neue/64/01013b/xbox-menu.png" alt="xbox-menu" />
       </button>
       {show
         && (
           <>
             <nav className="wrapper">
               <div className="img-links">
-                <img width="100" height="100" src="https://img.icons8.com/bubbles/100/home.png" alt="logo" />
+                <img width="100" height="100" src={logo} alt="logo" />
                 <ul>
-                  {links.map((l) => <li key={l.title}><Link to={l.path}>{l.title}</Link></li>)}
+                  {links.map((l) => (
+                    <li key={l.title}>
+                      <Link onClick={() => setShow(!show)} to={l.path}>{l.title}</Link>
+                    </li>
+                  ))}
                   <li key="logout"><button className="logout" type="button" onClick={out}>LOGOUT</button></li>
                 </ul>
               </div>
+              <button type="button" onClick={() => setShow(!show)}>
+                <img className="cross" width="48" height="48" src="https://img.icons8.com/material-sharp/48/ffffff/multiply-2.png" alt="multiply-2" />
+              </button>
               <h6>&#169; HOUSE RENT APP. 2023</h6>
             </nav>
-            <button type="button" onClick={() => setShow(!show)}>
-              <img className="cross" width="48" height="48" src="https://img.icons8.com/material-sharp/48/ffffff/multiply-2.png" alt="multiply-2" />
-            </button>
           </>
         )}
     </header>
   );
-};
-
-MobNav.propTypes = {
-  handleLogout: PropTypes.func.isRequired,
 };
 
 export default MobNav;
