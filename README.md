@@ -53,9 +53,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
+***[Link to Live Demo](https://hotels-reservations-frontend.onrender.com/)***
 
 ***[Link to FrontEnd Repo](https://github.com/huzaifakhan0308/full-stack-capstone-front-end)***
-***[Link to Live Demo](https://hotels-reservations-frontend.onrender.com/)***
 
 ***[Link to BackEnd Repo](https://github.com/huzaifakhan0308/full-stack-capstone-back-end)***
 
@@ -125,14 +125,15 @@ For tracking linter errors locally you need to follow these steps:
 👤 **Jitender Kumar**
 
 - GitHub: [@githubhandle](https://github.com/ohyajk)
-
+  
 👤 **Mark**
 
 - GitHub: [@githubhandle](https://github.com/Fene-87)
-
-  👤 **Muhammad Huzaifa khan**
+  
+👤 **Muhammad Huzaifa khan**
 
 - GitHub: [@githubhandle](https://github.com/huzaifakhan0308)
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
