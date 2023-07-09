@@ -53,7 +53,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-***[Link to Live Demo](https://hotels-reservations-frontend.onrender.com/)***
+***[Link to Live Demo](https://book-ease.onrender.com/)***
 
 ***[Link to FrontEnd Repo](https://github.com/huzaifakhan0308/full-stack-capstone-front-end)***
 
