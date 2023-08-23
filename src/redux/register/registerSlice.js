@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const register = createAsyncThunk('auth/register', async (cred) => {
-  const response = await fetch('https://hotels-reservations.onrender.com/users', {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

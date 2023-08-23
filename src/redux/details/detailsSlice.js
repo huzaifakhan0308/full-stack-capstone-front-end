@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchDetails = createAsyncThunk('details/fetchDetails', async ({ user_id, room_id }) => {
   try {
-    const res = await fetch(`https://hotels-reservations.onrender.com/users/${user_id}/rooms/${room_id}`);
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${user_id}/rooms/${room_id}`);
     const data = res.json();
     return data;
   } catch (error) {

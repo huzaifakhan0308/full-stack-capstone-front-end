@@ -104,7 +104,6 @@
   .hotel-card {
     width: 40rem;
     height: 250px;
-    flex-direction: row;
     padding: 0 1rem;
   }
 

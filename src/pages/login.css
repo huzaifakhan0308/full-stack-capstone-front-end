@@ -42,7 +42,7 @@
 }
 
 .content form input {
-  width: 300px;
+  width: 250px;
   padding: 10px 10px;
   box-sizing: border-box;
   outline: none;
@@ -81,4 +81,10 @@
 
 .content p button:hover {
   color: rgba(2, 2, 69, 0.73);
+}
+
+@media screen and (min-width: 700px) {
+  .content form input {
+    width: 300px;
+  }
 }

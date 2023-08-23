@@ -64,7 +64,8 @@ const Login = () => {
                   </form>
                   <p>
                     New here? Click to
-                    <button onClick={switchDiv} type="button">Register</button>
+                    {'  '}
+                    <button onClick={switchDiv} type="button">Register.</button>
                   </p>
                 </div>
               </div>
@@ -94,6 +95,7 @@ const Login = () => {
                   </form>
                   <p>
                     Already Registered ? Click to
+                    {' '}
                     <button onClick={switchDiv} type="button">Login</button>
                   </p>
                 </div>

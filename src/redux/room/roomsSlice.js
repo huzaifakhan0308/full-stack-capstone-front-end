@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const CreateRoom = createAsyncThunk('create/room', async (obj) => {
-  const response = await fetch(`https://hotels-reservations.onrender.com/users/${obj.room.users_id}/rooms`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${obj.room.users_id}/rooms`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
