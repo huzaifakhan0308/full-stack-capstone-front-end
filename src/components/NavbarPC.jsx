@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './NavbarPC.css';
+import './Navbar.css';
 import logo from '../assets/BookEase Logos/BookEase Logo White Text-01.png';
 
 const Navbar = () => {

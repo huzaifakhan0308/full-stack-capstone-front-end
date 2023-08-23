@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+:link {
+  display: flex;
+  justify-content: center;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -47,7 +52,7 @@
   align-items: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 799px) {
   .home-container {
     height: 100vh;
   }
