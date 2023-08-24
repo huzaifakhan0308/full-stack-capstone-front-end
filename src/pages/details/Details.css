@@ -50,7 +50,7 @@
 .room-detail-header {
   font-size: 32px;
   letter-spacing: 3px;
-  color: #d32b6c;
+  color: white;
 }
 
 .detail-status-container {
@@ -127,10 +127,6 @@
   .upper-text-container {
     margin-top: 0;
     align-items: end;
-  }
-
-  .room-detail-header {
-    color: #fff;
   }
 
   .positioning {

@@ -35,9 +35,9 @@ const AddReservation = () => {
           <h1>Create Reservation</h1>
           <br />
           From:
-          <input type="date" name="from_date" placeholder="From" />
+          <input type="date" name="from_date" placeholder="From" required />
           To:
-          <input type="date" name="to_date" placeholder="To" />
+          <input type="date" name="to_date" placeholder="To" required />
           <button type="submit">Reserved room</button>
         </form>
       </div>

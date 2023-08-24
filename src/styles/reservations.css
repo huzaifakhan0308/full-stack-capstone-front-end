@@ -29,3 +29,7 @@
 .btn:hover {
   border: 1px solid black;
 }
+
+@media screen and (min-width: 700px) {
+  
+}

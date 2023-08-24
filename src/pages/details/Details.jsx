@@ -42,7 +42,7 @@ const Details = () => {
         <div className="details-text-container">
           <div className="upper-text-container">
             <h2 className="room-detail-header">{room.room_name}</h2>
-            <p>(Reservation for 24hrs only)</p>
+            <p>Reserve your favorite room now!</p>
             <div className="detail-status-container">
               <div className="detail-status">
                 <p>

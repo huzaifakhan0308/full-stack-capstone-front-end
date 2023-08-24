@@ -37,6 +37,12 @@ const Reservations = () => {
     }
   };
 
+  // useEffect(() => {
+  //   console.log(reservations[0].rooms_id);
+  //   console.log(hotels.find());
+  //   console.log(hotels[reservations[0].rooms_id]?.room_name);
+  // }, [reservations, hotels]);
+
   if (!reservations.length) <h1 className="title">No reservations</h1>;
 
   return (
@@ -45,10 +51,10 @@ const Reservations = () => {
       <br />
       {reservations.map((reservation) => (
         <div key={reservation.id} className="card">
-
           <h2>
             Room Name:
-            {hotels[reservation?.rooms_id]?.room_name}
+            {' '}
+            {hotels.find((hotel) => hotel.id === reservation.rooms_id)?.room_name}
           </h2>
           <div className="date">
             <h3>
