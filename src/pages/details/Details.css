@@ -83,17 +83,19 @@
 }
 
 .details-reserve-btn {
-  color: #fff;
-  margin-top: 12rem;
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
   align-items: center;
+  color: #fff;
   background-color: #d32b6c;
-  padding: 10px;
+  margin-top: 12rem;
   font-size: 20px;
   border-radius: 5px;
+  width: 200px;
+  padding: 10px;
+  overflow: hidden;
+  z-index: 1;
   cursor: pointer;
-  width: fit-content;
 }
 
 .reserved {
