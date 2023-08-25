@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import './login.css';
+import '../styles/login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/login/loginSlice';
 import { register } from '../redux/register/registerSlice';
 import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
 
 const Login = () => {
-  // HOOK
   const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state.login);
+  const { data, loading, status } = useSelector((state) => state.login);
   const regData = useSelector((state) => state.register.data);
   const regLoading = useSelector((state) => state.register.loading);
   if (data && data.message === 'User login successfully') {
@@ -17,20 +16,24 @@ const Login = () => {
     window.location.reload();
   }
 
-  // STATE
+  const checkStatus = () => {
+    if (status === 'rejected') {
+      alert('something went wrong! check your username or password.');
+    }
+  };
+
   const [loginDiv, setLoginDiv] = useState(true);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [verifyPassword, setVerifyPassword] = useState('');
 
-  // LOGIN
   const handleLogin = async (e) => {
     e.preventDefault();
     const cred = { username, password };
-    dispatch(login(cred));
+    await dispatch(login(cred));
+    checkStatus();
   };
 
-  // REGISTER
   const handleRegister = (e) => {
     e.preventDefault();
     if (password === verifyPassword) {
@@ -39,7 +42,6 @@ const Login = () => {
     }
   };
 
-  // SWITCH LOGIN/REGISTER
   const switchDiv = () => {
     setUsername('');
     setPassword('');

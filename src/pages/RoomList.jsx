@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchHotels } from '../redux/home/homeSlice';
-import './RoomList.css';
+import '../styles/RoomList.css';
 
 const RoomList = () => {
   const dispatch = useDispatch();

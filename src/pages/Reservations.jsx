@@ -43,26 +43,37 @@ const Reservations = () => {
     <section className="container">
       <h1 className="title">My Reservations</h1>
       <br />
-      {reservations?.map((reservation) => (
-        <div key={reservation.id} className="card">
-          <img src={hotels.find((hotel) => hotel.id === reservation.rooms_id)?.image_url} alt="" />
-          <div className="date">
-            <h2>
-              {hotels.find((hotel) => hotel.id === reservation.rooms_id)?.room_name}
-            </h2>
-            <h3>
-              From date:
-              {reservation.from_date}
-            </h3>
-            <h3>
-              To date:
-              {reservation.to_date}
-            </h3>
-            <br />
-            <button disabled={disable} style={{ opacity: disable ? '20%' : '100%' }} className="btn" type="button" onClick={() => cancelReservation(reservation.id)}>Cancel reservation</button>
-          </div>
-        </div>
-      ))}
+      {
+        reservations.length > 0
+          ? (
+            <>
+              { reservations?.map((reservation) => (
+                <div key={reservation.id} className="card">
+                  <img src={hotels.find((hotel) => hotel.id === reservation.rooms_id)?.image_url} alt="" />
+                  <div className="date">
+                    <h2>
+                      {hotels.find((hotel) => hotel.id === reservation.rooms_id)?.room_name}
+                    </h2>
+                    <h3>
+                      From date:
+                      {reservation.from_date}
+                    </h3>
+                    <h3>
+                      To date:
+                      {reservation.to_date}
+                    </h3>
+                    <br />
+                    <button disabled={disable} style={{ opacity: disable ? '20%' : '100%' }} className="btn" type="button" onClick={() => cancelReservation(reservation.id)}>Cancel reservation</button>
+                  </div>
+                </div>
+              ))}
+            </>
+          )
+          : (
+            <h2 className="no-reservations">you have no reservations yet!</h2>
+          )
+      }
+
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar.css';
+import '../styles/Navbar.css';
 import { Link } from 'react-router-dom';
 import logo from '../assets/BookEase Logos/BookEase Logo White Text-01.png';
 import logo2 from '../assets/BookEase Logos/BookEase Logo-01.png';

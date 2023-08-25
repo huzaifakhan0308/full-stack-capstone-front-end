@@ -30,9 +30,9 @@
   padding: 10px 20px;
   cursor: pointer;
   color: #fff;
-  background-color: rgb(112, 107, 254);
+  background-color: red;
 }
 
 .roomList button:hover {
-  background-color: rgb(79, 73, 255);
+  background-color: rgba(255, 0, 0, 0.58);
 }

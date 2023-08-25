@@ -3,6 +3,10 @@
   padding-top: 2vh;
 }
 
+.no-reservations{
+  text-align: center;
+}
+
 .card {
   background-color: #f0f2f1;
   width: 80%;
