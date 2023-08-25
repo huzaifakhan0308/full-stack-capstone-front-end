@@ -6,15 +6,20 @@
 .card {
   background-color: #f0f2f1;
   width: 80%;
+  max-width: 600px;
   margin: auto;
   border-radius: 0.3vw;
-  padding: 1vw;
+  padding: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   border: 1px solid gray;
-  box-shadow: inset 0 0 1em #01013b, 0 0 2em gray;
   color: #01013b;
   margin-bottom: 7px;
+}
+
+.card img {
+  width: 100%;
 }
 
 .btn {
@@ -23,11 +28,12 @@
   background-color: red;
   color: white;
   border: none;
-  border-radius: 0.2vw;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .btn:hover {
-  border: 1px solid black;
+  background-color: rgba(1, 1, 59, 0.638);
 }
 
 @media screen and (min-width: 700px) {

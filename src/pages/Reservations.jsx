@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/reservations.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
 import { GetReservation } from '../redux/reservation/reservationListSlice';
 import { fetchHotels } from '../redux/home/homeSlice';
 
@@ -10,8 +9,6 @@ const Reservations = () => {
   const reservations = useSelector((state) => state.reservationList.reservations) || [];
 
   const loginUserData = JSON.parse(localStorage.getItem('user_data'));
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(GetReservation({
@@ -23,7 +20,10 @@ const Reservations = () => {
 
   const { hotels } = useSelector((store) => store.home);
 
+  const [disable, setDisable] = useState(false);
+
   const cancelReservation = async (id) => {
+    setDisable(true);
     const response = await fetch(`https://hotels-reservations.onrender.com/users/${loginUserData.user_id}/reservations/${id}`, {
       method: 'DELETE',
       headers: {
@@ -31,32 +31,25 @@ const Reservations = () => {
       },
       body: JSON.stringify({ password: loginUserData.password }),
     });
-
+    setDisable(false);
     if (response.ok) {
-      navigate('/');
+      window.location.reload();
+    } else {
+      alert('Opps something went wrong try again!');
     }
   };
 
-  // useEffect(() => {
-  //   console.log(reservations[0].rooms_id);
-  //   console.log(hotels.find());
-  //   console.log(hotels[reservations[0].rooms_id]?.room_name);
-  // }, [reservations, hotels]);
-
-  if (!reservations.length) <h1 className="title">No reservations</h1>;
-
   return (
     <section className="container">
-      <h1 className="title">Reservations</h1>
+      <h1 className="title">My Reservations</h1>
       <br />
-      {reservations.map((reservation) => (
+      {reservations?.map((reservation) => (
         <div key={reservation.id} className="card">
-          <h2>
-            Room Name:
-            {' '}
-            {hotels.find((hotel) => hotel.id === reservation.rooms_id)?.room_name}
-          </h2>
+          <img src={hotels.find((hotel) => hotel.id === reservation.rooms_id)?.image_url} alt="" />
           <div className="date">
+            <h2>
+              {hotels.find((hotel) => hotel.id === reservation.rooms_id)?.room_name}
+            </h2>
             <h3>
               From date:
               {reservation.from_date}
@@ -66,7 +59,7 @@ const Reservations = () => {
               {reservation.to_date}
             </h3>
             <br />
-            <button className="btn" type="button" onClick={() => cancelReservation(reservation.id)}>Cancel reservation</button>
+            <button disabled={disable} style={{ opacity: disable ? '20%' : '100%' }} className="btn" type="button" onClick={() => cancelReservation(reservation.id)}>Cancel reservation</button>
           </div>
         </div>
       ))}
