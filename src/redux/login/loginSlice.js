@@ -9,7 +9,6 @@ export const login = createAsyncThunk('auth/login', async (cred, thunkAPI) => {
       },
       body: JSON.stringify(cred),
     });
-    console.log(response);
     if (!response.ok) {
       const errorData = await response.json();
       return thunkAPI.rejectWithValue(errorData);
