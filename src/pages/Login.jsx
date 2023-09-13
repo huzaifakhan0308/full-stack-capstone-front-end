@@ -4,7 +4,6 @@ import '../styles/login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/login/loginSlice';
 import { register } from '../redux/register/registerSlice';
-import { useNavigate } from 'react-router-dom';
 import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
 
 const Login = () => {
@@ -21,8 +20,6 @@ const Login = () => {
   const checkStatus = () => {
     if (status === 'rejected') {
       alert('something went wrong! check your username or password.');
-    } else {
-      useNavigate('/')
     }
   };
 

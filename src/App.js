@@ -13,7 +13,13 @@ import Login from './pages/Login';
 import Details from './pages/details/Details';
 
 function App() {
-  const isLoggedIn = localStorage.getItem('logged_user') ? true : false;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const user = localStorage.getItem('logged_user');
+    setIsLoggedIn(!!user);
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
