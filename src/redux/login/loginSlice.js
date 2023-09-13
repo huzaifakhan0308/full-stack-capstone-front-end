@@ -16,6 +16,7 @@ export const login = createAsyncThunk('auth/login', async (cred, thunkAPI) => {
     const data = await response.json();
     return data;
   } catch (error) {
+    alert('something went wrong! check your username or password.');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -36,13 +37,14 @@ const loginSlice = createSlice({
       })
       .addCase(login.fulfilled, (state, action) => {
         state.data = action.payload;
+        console.log(action.payload);
         state.loading = false;
         state.error = null;
+        state.status = 'fulfilled';
       })
       .addCase(login.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-        state.status = 'rejected';
       });
   },
 });

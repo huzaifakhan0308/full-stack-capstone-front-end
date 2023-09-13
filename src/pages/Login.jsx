@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/login/loginSlice';
@@ -8,20 +8,14 @@ import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { data, loading, status } = useSelector((state) => state.login);
+  const { data, loading } = useSelector((state) => state.login);
   const regData = useSelector((state) => state.register.data);
   const regLoading = useSelector((state) => state.register.loading);
   if (data && data.message === 'User login successfully') {
     localStorage.setItem('logged_user', JSON.stringify(true));
     localStorage.setItem('user_data', JSON.stringify(data));
-    window.location.reload();
+    window.location.reload()
   }
-
-  const checkStatus = () => {
-    if (status === 'rejected') {
-      alert('something went wrong! check your username or password.');
-    }
-  };
 
   const [loginDiv, setLoginDiv] = useState(true);
   const [username, setUsername] = useState('');
@@ -32,7 +26,6 @@ const Login = () => {
     e.preventDefault();
     const cred = { username, password };
     await dispatch(login(cred));
-    checkStatus();
   };
 
   const handleRegister = (e) => {
