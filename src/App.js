@@ -16,7 +16,7 @@ function App() {
   const isLoggedIn = localStorage.getItem('logged_user') ? true : false;
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         {isLoggedIn && (
           <>
             <MobNav />
