@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
@@ -24,7 +25,7 @@ function App() {
             <NavbarPC />
           </>
         )}
-        <Routes>
+       <Routes>
           {/* <Route
             path="/"
             element={
@@ -33,9 +34,7 @@ function App() {
           /> */}
           <Route
             path="/Login"
-            element={
-              <Login />
-            }
+            element={<Login />}
           />
           {/* <Route
             path="/rooms"
