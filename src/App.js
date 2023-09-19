@@ -26,16 +26,16 @@ function App() {
           </>
         )}
        <Routes>
-          {/* <Route
+          <Route
             path="/"
             element={
-              isLoggedIn ? <Home /> : <Navigate to="/login" replace />
+              <Home /> 
             }
-          /> */}
-          <Route
+          />
+          {/* <Route
             path="/Login"
             element={<Login />}
-          />
+          /> */}
           {/* <Route
             path="/rooms"
             element={
