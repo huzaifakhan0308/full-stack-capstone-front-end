@@ -2,12 +2,12 @@ import React from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom';
+import './App.css';
 import Home from './pages/home/Home';
 import RoomList from './pages/RoomList';
 import Reservations from './pages/Reservations';
 import AddReservation from './pages/AddReservation';
 import NavbarPC from './components/NavbarPC';
-import './App.css';
 import MobNav from './components/MobNav';
 import AddRoom from './pages/AddRoom';
 import Login from './pages/Login';
@@ -25,23 +25,19 @@ function App() {
           </>
         )}
         <Routes>
-          <Route
+          {/* <Route
             path="/"
             element={
               isLoggedIn ? <Home /> : <Navigate to="/login" replace />
             }
-          />
+          /> */}
           <Route
-            path="/login"
+            path="/Login"
             element={
-              isLoggedIn ? (
-                <Navigate to="/" replace />
-              ) : (
-                <Login />
-              )
+              <Login />
             }
           />
-          <Route
+          {/* <Route
             path="/rooms"
             element={
               isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
@@ -70,7 +66,7 @@ function App() {
             element={
               isLoggedIn ? <Details /> : <Navigate to="/login" replace />
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>
