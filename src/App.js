@@ -1,6 +1,7 @@
-/* eslint-disable */
-import { useEffect, useState } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import React from 'react';
+import {
+  BrowserRouter, Route, Routes, Navigate,
+} from 'react-router-dom';
 import Home from './pages/home/Home';
 import RoomList from './pages/RoomList';
 import Reservations from './pages/Reservations';
@@ -13,7 +14,7 @@ import Login from './pages/Login';
 import Details from './pages/details/Details';
 
 function App() {
-  const isLoggedIn = localStorage.getItem('logged_user') ? true : false;
+  const isLoggedIn = !!localStorage.getItem('logged_user');
   return (
     <div className="App">
       <BrowserRouter>
@@ -24,19 +25,23 @@ function App() {
           </>
         )}
         <Routes>
-          {/* <Route
+          <Route
             path="/"
             element={
               isLoggedIn ? <Home /> : <Navigate to="/login" replace />
             }
-          /> */}
+          />
           <Route
             path="/login"
             element={
+              isLoggedIn ? (
+                <Navigate to="/" replace />
+              ) : (
                 <Login />
+              )
             }
           />
-          {/* <Route
+          <Route
             path="/rooms"
             element={
               isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
@@ -65,7 +70,7 @@ function App() {
             element={
               isLoggedIn ? <Details /> : <Navigate to="/login" replace />
             }
-          /> */}
+          />
         </Routes>
       </BrowserRouter>
     </div>

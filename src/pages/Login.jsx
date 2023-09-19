@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../styles/login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/login/loginSlice';
@@ -14,7 +13,7 @@ const Login = () => {
   if (data && data.message === 'User login successfully') {
     localStorage.setItem('logged_user', JSON.stringify(true));
     localStorage.setItem('user_data', JSON.stringify(data));
-    window.location.reload()
+    window.location.reload();
   }
 
   const [loginDiv, setLoginDiv] = useState(true);
