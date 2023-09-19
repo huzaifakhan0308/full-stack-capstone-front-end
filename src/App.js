@@ -24,17 +24,19 @@ function App() {
           </>
         )}
         <Routes>
-          <Route
+          {/* <Route
             path="/"
             element={
               isLoggedIn ? <Home /> : <Navigate to="/login" replace />
             }
-          />
+          /> */}
           <Route
             path="/login"
-            element={ <Login /> }
+            element={
+                <Login />
+            }
           />
-          <Route
+          {/* <Route
             path="/rooms"
             element={
               isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
@@ -63,7 +65,7 @@ function App() {
             element={
               isLoggedIn ? <Details /> : <Navigate to="/login" replace />
             }
-          />
+          /> */}
         </Routes>
       </BrowserRouter>
     </div>
