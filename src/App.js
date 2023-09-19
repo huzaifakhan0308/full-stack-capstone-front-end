@@ -27,42 +27,49 @@ function App() {
         <Routes>
           <Route
             path="/"
+            exact
             element={
               isLoggedIn ? <Home /> : <Navigate to="/login" replace />
             }
           />
           <Route
             path="/login"
+            exact
             element={
               isLoggedIn ? <Navigate to="/" replace /> : <Login />
             }
           />
           <Route
             path="/rooms"
+            exact
             element={
               isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
             }
           />
           <Route
             path="/reservations"
+            exact
             element={
               isLoggedIn ? <Reservations /> : <Navigate to="/login" replace />
             }
           />
           <Route
             path="/AddReservation/:id"
+            exact
             element={
               isLoggedIn ? <AddReservation /> : <Navigate to="/login" replace />
             }
           />
           <Route
             path="/addRoom"
+            exact
             element={
               isLoggedIn ? <AddRoom /> : <Navigate to="/login" replace />
             }
           />
           <Route
             path="/details/:id"
+            exact
             element={
               isLoggedIn ? <Details /> : <Navigate to="/login" replace />
             }
