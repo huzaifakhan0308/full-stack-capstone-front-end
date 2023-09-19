@@ -32,13 +32,7 @@ function App() {
           />
           <Route
             path="/login"
-            element={
-              isLoggedIn ? (
-                <Navigate to="/" replace />
-              ) : (
-                <Login />
-              )
-            }
+            element={ <Login /> }
           />
           <Route
             path="/rooms"
