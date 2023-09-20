@@ -12,7 +12,7 @@ import {
 import NavbarPC from './components/NavbarPC';
 import './App.css';
 import MobNav from './components/MobNav';
-import Login from './pages/Login';
+import Login from './pages/Login.jsx';
 
 function App() {
   const isLoggedIn = !!localStorage.getItem('logged_user');
@@ -34,7 +34,7 @@ function App() {
             }
           /> */}
           <Route
-            path="/login"
+            path="/home"
             element={
               <Login />
             }
