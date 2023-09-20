@@ -9,73 +9,25 @@ import {
 // import AddReservation from './pages/AddReservation';
 // import AddRoom from './pages/AddRoom';
 // import Details from './pages/details/Details';
-import NavbarPC from './components/NavbarPC';
+// import NavbarPC from './components/NavbarPC';
+// import MobNav from './components/MobNav';
 import './App.css';
-import MobNav from './components/MobNav';
 import Login from './pages/Login';
 import Abc from './pages/abc';
 
 function App() {
-  const isLoggedIn = !!localStorage.getItem('logged_user');
-  
   return (
     <div className="App">
       <BrowserRouter>
-        {isLoggedIn && (
-          <>
-            <MobNav />
-            <NavbarPC />
-          </>
-        )}
         <Routes>
-          {/* <Route
-            path="/"
-            element={
-              <Home />
-            }
-          /> */}
           <Route
             path="/login"
-            element={
-              <Login />
-            }
+            element={<Login />}
           />
           <Route
             path="/abc"
-            element={
-              <Abc />
-            }
+            element={<Abc />}
           />
-          {/* <Route
-            path="/rooms"
-            element={
-              <RoomList />
-            }
-          />
-          <Route
-            path="/reservations"
-            element={
-              <Reservations />
-            }
-          />
-          <Route
-            path="/AddReservation/:id"
-            element={
-              <AddReservation />
-            }
-          />
-          <Route
-            path="/addRoom"
-            element={
-              <AddRoom />
-            }
-          />
-          <Route
-            path="/details/:id"
-            element={
-              <Details />
-            }
-          /> */}
         </Routes>
       </BrowserRouter>
     </div>
