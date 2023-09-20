@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom';
@@ -12,11 +12,11 @@ import './App.css';
 import MobNav from './components/MobNav';
 import AddRoom from './pages/AddRoom';
 import Login from './pages/Login';
-import Abc from './pages/abc';
 import Details from './pages/details/Details';
 
 function App() {
   const isLoggedIn = !!localStorage.getItem('logged_user');
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -29,51 +29,44 @@ function App() {
         <Routes>
           <Route
             path="/"
-            exact
             element={
-              isLoggedIn ? <Home /> : <Navigate to="/login" replace />
+              isLoggedIn ? <Home /> : ""
             }
           />
           <Route
             path="/login"
-            exact
             element={
-              isLoggedIn ? <Navigate to="/" replace /> : <Abc />
+              <Login />
             }
           />
           <Route
             path="/rooms"
-            exact
             element={
-              isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
+              isLoggedIn ? <RoomList /> : ""
             }
           />
           <Route
             path="/reservations"
-            exact
             element={
-              isLoggedIn ? <Reservations /> : <Navigate to="/login" replace />
+              isLoggedIn ? <Reservations /> : ""
             }
           />
           <Route
             path="/AddReservation/:id"
-            exact
             element={
-              isLoggedIn ? <AddReservation /> : <Navigate to="/login" replace />
+              isLoggedIn ? <AddReservation /> : ""
             }
           />
           <Route
             path="/addRoom"
-            exact
             element={
-              isLoggedIn ? <AddRoom /> : <Navigate to="/login" replace />
+              isLoggedIn ? <AddRoom /> : ""
             }
           />
           <Route
             path="/details/:id"
-            exact
             element={
-              isLoggedIn ? <Details /> : <Navigate to="/login" replace />
+              isLoggedIn ? <Details /> : ""
             }
           />
         </Routes>
