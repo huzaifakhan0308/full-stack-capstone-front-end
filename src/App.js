@@ -36,7 +36,7 @@ function App() {
             path="/login"
             exact
             element={
-              <Login />
+              isLoggedIn ? <Navigate to="/" replace /> : <Login />
             }
           />
           <Route
