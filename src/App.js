@@ -6,9 +6,9 @@ import Home from './pages/home/Home';
 import RoomList from './pages/RoomList';
 import Reservations from './pages/Reservations';
 import AddReservation from './pages/AddReservation';
-// import NavbarPC from './components/NavbarPC';
+import NavbarPC from './components/NavbarPC';
 import './App.css';
-// import MobNav from './components/MobNav';
+import MobNav from './components/MobNav';
 import AddRoom from './pages/AddRoom';
 import Login from './pages/Login';
 import Details from './pages/details/Details';
@@ -18,12 +18,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        {/* {isLoggedIn && (
+        {isLoggedIn && (
           <>
             <MobNav />
             <NavbarPC />
           </>
-        )} */}
+        )}
         <Routes>
           <Route
             path="/"
