@@ -12,7 +12,7 @@ import {
 import NavbarPC from './components/NavbarPC';
 import './App.css';
 import MobNav from './components/MobNav';
-// import Login from './pages/Login';
+import Login from './pages/Login';
 import Abc from './pages/abc';
 
 function App() {
@@ -35,7 +35,13 @@ function App() {
             }
           /> */}
           <Route
-            path="/home"
+            path="/login"
+            element={
+              <Login />
+            }
+          />
+          <Route
+            path="/abc"
             element={
               <Abc />
             }
