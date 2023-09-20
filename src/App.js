@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disabled */
 import React, { useEffect } from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
@@ -30,7 +30,7 @@ function App() {
           <Route
             path="/"
             element={
-              isLoggedIn ? <Home /> : ""
+              <Home />
             }
           />
           <Route
@@ -42,31 +42,31 @@ function App() {
           <Route
             path="/rooms"
             element={
-              isLoggedIn ? <RoomList /> : ""
+              <RoomList />
             }
           />
           <Route
             path="/reservations"
             element={
-              isLoggedIn ? <Reservations /> : ""
+              <Reservations />
             }
           />
           <Route
             path="/AddReservation/:id"
             element={
-              isLoggedIn ? <AddReservation /> : ""
+              <AddReservation />
             }
           />
           <Route
             path="/addRoom"
             element={
-              isLoggedIn ? <AddRoom /> : ""
+              <AddRoom />
             }
           />
           <Route
             path="/details/:id"
             element={
-              isLoggedIn ? <Details /> : ""
+              <Details />
             }
           />
         </Routes>
