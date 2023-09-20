@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import {
-  BrowserRouter, Route, Routes
+  BrowserRouter, Routes, Route
 } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login';
@@ -14,11 +14,11 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            children={<Login />}
+            element={<Login />}
           />
           <Route
             path="/abc"
-            children={<Abc />}
+            element={<Abc />}
           />
         </Routes>
       </BrowserRouter>
