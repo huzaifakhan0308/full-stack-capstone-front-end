@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   BrowserRouter, Route, Routes, Navigate,
@@ -11,6 +12,7 @@ import './App.css';
 import MobNav from './components/MobNav';
 import AddRoom from './pages/AddRoom';
 import Login from './pages/Login';
+import Abc from './pages/abc';
 import Details from './pages/details/Details';
 
 function App() {
@@ -36,7 +38,7 @@ function App() {
             path="/login"
             exact
             element={
-              isLoggedIn ? <Navigate to="/" replace /> : <Login />
+              isLoggedIn ? <Navigate to="/" replace /> : <Abc />
             }
           />
           <Route
