@@ -1,50 +1,52 @@
-import React, { useState } from 'react';
+/* eslint-disable */
+import React from 'react';
 import '../styles/login.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from '../redux/login/loginSlice';
-import { register } from '../redux/register/registerSlice';
-import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { login } from '../redux/login/loginSlice';
+// import { register } from '../redux/register/registerSlice';
+// import logo from '../assets/BookEase Logos/next to Logo white Text-01-01.png';
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const { data, loading } = useSelector((state) => state.login);
-  const regData = useSelector((state) => state.register.data);
-  const regLoading = useSelector((state) => state.register.loading);
-  if (data && data.message === 'User login successfully') {
-    localStorage.setItem('logged_user', JSON.stringify(true));
-    localStorage.setItem('user_data', JSON.stringify(data));
-    window.location.reload();
-  }
+  // const dispatch = useDispatch();
+  // const { data, loading } = useSelector((state) => state.login);
+  // const regData = useSelector((state) => state.register.data);
+  // const regLoading = useSelector((state) => state.register.loading);
+  // if (data && data.message === 'User login successfully') {
+  //   localStorage.setItem('logged_user', JSON.stringify(true));
+  //   localStorage.setItem('user_data', JSON.stringify(data));
+  //   window.location.reload();
+  // }
 
-  const [loginDiv, setLoginDiv] = useState(true);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [verifyPassword, setVerifyPassword] = useState('');
+  // const [loginDiv, setLoginDiv] = useState(true);
+  // const [username, setUsername] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [verifyPassword, setVerifyPassword] = useState('');
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    const cred = { username, password };
-    await dispatch(login(cred));
-  };
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
+  //   const cred = { username, password };
+  //   await dispatch(login(cred));
+  // };
 
-  const handleRegister = (e) => {
-    e.preventDefault();
-    if (password === verifyPassword) {
-      const cred = { user: { username, password, password_confirmation: verifyPassword } };
-      dispatch(register(cred));
-    }
-  };
+  // const handleRegister = (e) => {
+  //   e.preventDefault();
+  //   if (password === verifyPassword) {
+  //     const cred = { user: { username, password, password_confirmation: verifyPassword } };
+  //     dispatch(register(cred));
+  //   }
+  // };
 
-  const switchDiv = () => {
-    setUsername('');
-    setPassword('');
-    setVerifyPassword('');
-    setLoginDiv(!loginDiv);
-  };
+  // const switchDiv = () => {
+  //   setUsername('');
+  //   setPassword('');
+  //   setVerifyPassword('');
+  //   setLoginDiv(!loginDiv);
+  // };
 
   return (
     <>
-      {loginDiv
+    login page
+      {/* {loginDiv
         ? (
           <section className="login">
             <div className="overlay">
@@ -97,7 +99,7 @@ const Login = () => {
               </div>
             </div>
           </section>
-        )}
+        )} */}
     </>
   );
 };
