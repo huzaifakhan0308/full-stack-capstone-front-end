@@ -1,16 +1,17 @@
 /* eslint-disable */
 import React from 'react';
 import {
-  BrowserRouter, Routes, Route
+  HashRouter as Router, Routes, Route
 } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login';
 import Abc from './pages/abc';
+import NotFound from './pages/notFound';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route
             path="/"
@@ -20,8 +21,9 @@ function App() {
             path="/abc"
             element={<Abc />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
