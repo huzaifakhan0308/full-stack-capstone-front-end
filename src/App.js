@@ -1,27 +1,73 @@
 /* eslint-disable */
 import React from 'react';
 import {
-  HashRouter as Router, Routes, Route
+  HashRouter as Router, Route, Routes, Navigate,
 } from 'react-router-dom';
+import Home from './pages/home/Home';
+import RoomList from './pages/RoomList';
+import Reservations from './pages/Reservations';
+import AddReservation from './pages/AddReservation';
+import NavbarPC from './components/NavbarPC';
 import './App.css';
+import MobNav from './components/MobNav';
+import AddRoom from './pages/AddRoom';
 import Login from './pages/Login';
-import Abc from './pages/abc';
-import NotFound from './pages/notFound';
+import Details from './pages/details/Details';
 
 function App() {
+  const isLoggedIn = !!localStorage.getItem('logged_user');
   return (
     <div className="App">
       <Router>
+        {isLoggedIn && (
+          <>
+            <MobNav />
+            <NavbarPC />
+          </>
+        )}
         <Routes>
           <Route
             path="/"
-            element={<Login />}
+            element={
+              isLoggedIn ? <Home /> : <Navigate to="/login" replace />
+            }
           />
           <Route
-            path="/abc"
-            element={<Abc />}
+            path="/login"
+            element={
+              isLoggedIn ? <Navigate to="/" replace /> : <Login />
+            }
           />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/rooms"
+            element={
+              isLoggedIn ? <RoomList /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route
+            path="/reservations"
+            element={
+              isLoggedIn ? <Reservations /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route
+            path="/AddReservation/:id"
+            element={
+              isLoggedIn ? <AddReservation /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route
+            path="/addRoom"
+            element={
+              isLoggedIn ? <AddRoom /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route
+            path="/details/:id"
+            element={
+              isLoggedIn ? <Details /> : <Navigate to="/login" replace />
+            }
+          />
         </Routes>
       </Router>
     </div>
